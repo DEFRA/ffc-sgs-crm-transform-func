@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEFRA.SGS.FuncApps", "DEFRA.SGS.FuncApps", "{6934F5D3-2613-4514-8E60-FC1A0DD1E4C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEFRA.SGS.APIs", "DEFRA.SGS.APIs", "{9AD0C82F-70C6-4A17-9BDF-0BC823CF0BBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEFRA.SGS.ArmTemplates", "DEFRA.SGS.ArmTemplates", "{B2AFD3E5-787E-40F7-BF08-1A569525B457}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEFRA.SGS.CommonProject", "DEFRA.SGS.CommonProject", "{B9C8A2AE-9FB5-4C36-824A-04709F1EC14E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEFRA.SGS.Tests", "DEFRA.SGS.Tests", "{5AF346C6-A5D4-4381-9F39-36E40EAE32F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEFRA.SGS.WebResources", "DEFRA.SGS.WebResources", "{340E4868-FAF8-4DD9-909E-B463A15BC73F}"
+	ProjectSection(SolutionItems) = preProject
+		DEFRA.SGS.WebResources\Application.js = DEFRA.SGS.WebResources\Application.js
+		DEFRA.SGS.WebResources\Case.js = DEFRA.SGS.WebResources\Case.js
+		DEFRA.SGS.WebResources\GrantApplication.js = DEFRA.SGS.WebResources\GrantApplication.js
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DEFRA.SGS.Listener", "DEFRA.SGS.OutboundQueueListener\DEFRA.SGS.Listener.csproj", "{B0F2A062-0B2B-49B5-9C9F-A7DDFCC36774}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEFRA.SGS.Console", "DEFRA.SGS.Console", "{9EA97753-C0E1-43C3-A18C-8003C052AA8D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEFRA.SGS.Plugins", "DEFRA.SGS.Plugins", "{0D2C9358-026E-4377-8DB2-C404CCD08C3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEFRA.SGS.CustomWorkflowActivities", "DEFRA.SGS.CustomWorkflowActivities", "{6337FA7E-2F81-4C51-BF9E-8C88F5E28853}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0F2A062-0B2B-49B5-9C9F-A7DDFCC36774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0F2A062-0B2B-49B5-9C9F-A7DDFCC36774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0F2A062-0B2B-49B5-9C9F-A7DDFCC36774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0F2A062-0B2B-49B5-9C9F-A7DDFCC36774}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B0F2A062-0B2B-49B5-9C9F-A7DDFCC36774} = {6934F5D3-2613-4514-8E60-FC1A0DD1E4C8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2850520D-A514-4F92-A1D1-77F408E85A9A}
+	EndGlobalSection
+EndGlobal
