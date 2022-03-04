@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEFRA.SGS.WebResources", "D
 		DEFRA.SGS.WebResources\GrantApplication.js = DEFRA.SGS.WebResources\GrantApplication.js
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DEFRA.SGS.Listener", "DEFRA.SGS.OutboundQueueListener\DEFRA.SGS.Listener.csproj", "{B0F2A062-0B2B-49B5-9C9F-A7DDFCC36774}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ffc-sgs-crm-transform-func", "DEFRA.SGS.OutboundQueueListener\ffc-sgs-crm-transform-func.csproj", "{B0F2A062-0B2B-49B5-9C9F-A7DDFCC36774}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEFRA.SGS.Console", "DEFRA.SGS.Console", "{9EA97753-C0E1-43C3-A18C-8003C052AA8D}"
 EndProject
