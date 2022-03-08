@@ -18,7 +18,7 @@ namespace DEFRA.SGS.Listener
         }
 
         [FunctionName("EligibilityCheckRequest")]
-        public void EligibilityCheckRequestListener([ServiceBusTrigger("ffc-sfi-eligibility-check-request",
+        public void EligibilityCheckRequestListener([ServiceBusTrigger("ffc-sgs-eligibility-check-request",
             Connection = "RootManageSharedAccessKey")] string myQueueItem, ILogger log)
         {
             try
@@ -86,7 +86,7 @@ namespace DEFRA.SGS.Listener
         }
 
         [FunctionName("EligibilityCheckResponse")]
-        public void EligibilityCheckResponseListener([ServiceBusTrigger("ffc-sfi-eligibility-check-response",
+        public void EligibilityCheckResponseListener([ServiceBusTrigger("ffc-sgs-eligibility-check-response",
             Connection = "RootManageSharedAccessKey", IsSessionsEnabled = false)] string myQueueItem, ILogger log)
         {
             log?.LogInformation($"ServiceBus queue trigger function {nameof(EligibilityCheckResponseListener)} processed message: {myQueueItem}");

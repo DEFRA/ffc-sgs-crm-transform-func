@@ -25,7 +25,7 @@ namespace DEFRA.SGS.Listener.Services
         {
             var grantCase = await GetCase(caseId, log);
 
-            // build payload and send to 'ffc-sfi-eligibility-check' topic
+            // build payload and send to 'ffc-sgs-eligibility-check' topic
             var requestMessage = new RequestPayload
             {
                 CustomerReferenceNumber = grantCase.CustomerReferenceNumber,
