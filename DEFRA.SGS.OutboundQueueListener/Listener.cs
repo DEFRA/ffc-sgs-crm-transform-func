@@ -51,39 +51,39 @@ namespace DEFRA.SGS.Listener
             }
         }
 
-        [FunctionName("AgreementCalculateRequest")]
-        public void AgreementCalculateRequestListener([ServiceBusTrigger("ffc-sfi-agreement-calculate-request",
-                Connection = "RootManageSharedAccessKey")] string myQueueItem, ILogger log)
-        {
-            try
-            {
-                log?.LogInformation($"ServiceBus queue trigger function {nameof(AgreementCalculateRequestListener)} processed message: {myQueueItem}");
+        //[FunctionName("AgreementCalculateRequest")]
+        //public void AgreementCalculateRequestListener([ServiceBusTrigger("ffc-sfi-agreement-calculate-request",
+        //        Connection = "RootManageSharedAccessKey")] string myQueueItem, ILogger log)
+        //{
+        //    try
+        //    {
+        //        log?.LogInformation($"ServiceBus queue trigger function {nameof(AgreementCalculateRequestListener)} processed message: {myQueueItem}");
 
-                var jObject = (JObject)JsonConvert.DeserializeObject(myQueueItem);
-                var jValue = (JValue)jObject["PrimaryEntityId"];
-                log?.LogInformation($"PrimaryEntityId: {jValue}");
+        //        var jObject = (JObject)JsonConvert.DeserializeObject(myQueueItem);
+        //        var jValue = (JValue)jObject["PrimaryEntityId"];
+        //        log?.LogInformation($"PrimaryEntityId: {jValue}");
 
-                Guid applicationId = Guid.Parse(jValue.ToString());
+        //        Guid applicationId = Guid.Parse(jValue.ToString());
 
-                log?.LogInformation($"{nameof(AgreementCalculateRequestListener)} - Service started");
+        //        log?.LogInformation($"{nameof(AgreementCalculateRequestListener)} - Service started");
 
-                _logicService.AgreementCalculatorRequest(applicationId, log);
+        //        _logicService.AgreementCalculatorRequest(applicationId, log);
 
-                log?.LogInformation($"{nameof(AgreementCalculateRequestListener)} - Service completed");
-            }
-            catch (JsonSerializationException jex)
-            {
-                log?.LogError(jex, $"{nameof(AgreementCalculateRequestListener)} - Invalid Start Session Request JSON: {jex.InnerException?.Message ?? jex.Message}");
-                throw;
-            }
-            catch (Exception ex)
-            {
-                string errorMessage = ex.InnerException?.Message ?? ex.Message;
+        //        log?.LogInformation($"{nameof(AgreementCalculateRequestListener)} - Service completed");
+        //    }
+        //    catch (JsonSerializationException jex)
+        //    {
+        //        log?.LogError(jex, $"{nameof(AgreementCalculateRequestListener)} - Invalid Start Session Request JSON: {jex.InnerException?.Message ?? jex.Message}");
+        //        throw;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        string errorMessage = ex.InnerException?.Message ?? ex.Message;
 
-                log?.LogError(ex, $"{nameof(AgreementCalculateRequestListener)} function execution failed | Error: {errorMessage}");
-                throw;
-            }
-        }
+        //        log?.LogError(ex, $"{nameof(AgreementCalculateRequestListener)} function execution failed | Error: {errorMessage}");
+        //        throw;
+        //    }
+        //}
 
         [FunctionName("EligibilityCheckResponse")]
         public void EligibilityCheckResponseListener([ServiceBusTrigger("ffc-sgs-eligibility-check-response",
@@ -111,63 +111,63 @@ namespace DEFRA.SGS.Listener
             }
         }
 
-        [FunctionName("AgreementCalculateResponse")]
-        public void AgreementCalculateResponseListener([ServiceBusTrigger("ffc-sfi-agreement-calculate-response", 
-            Connection = "RootManageSharedAccessKey", IsSessionsEnabled = true)] string myQueueItem, ILogger log)
-        {
-            log?.LogInformation($"ServiceBus queue trigger function {nameof(AgreementCalculateResponseListener)} processed message: {myQueueItem}");
+        //[FunctionName("AgreementCalculateResponse")]
+        //public void AgreementCalculateResponseListener([ServiceBusTrigger("ffc-sfi-agreement-calculate-response", 
+        //    Connection = "RootManageSharedAccessKey", IsSessionsEnabled = true)] string myQueueItem, ILogger log)
+        //{
+        //    log?.LogInformation($"ServiceBus queue trigger function {nameof(AgreementCalculateResponseListener)} processed message: {myQueueItem}");
 
-            try
-            {
-                ResponsePayload response = JsonConvert.DeserializeObject<ResponsePayload>(myQueueItem);
+        //    try
+        //    {
+        //        ResponsePayload response = JsonConvert.DeserializeObject<ResponsePayload>(myQueueItem);
 
 
 
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //    }
+        //}
 
-        [FunctionName("OutboundQueueListener")]
-        public void RunOutboundQueueListener([ServiceBusTrigger("crm-outbound", Connection = "OutboundQueueConnectionString")] string myQueueItem, ILogger log)
-        {
-            log?.LogInformation($"ServiceBus queue trigger function {nameof(RunOutboundQueueListener)} processed message: {myQueueItem}");
+        //[FunctionName("OutboundQueueListener")]
+        //public void RunOutboundQueueListener([ServiceBusTrigger("crm-outbound", Connection = "OutboundQueueConnectionString")] string myQueueItem, ILogger log)
+        //{
+        //    log?.LogInformation($"ServiceBus queue trigger function {nameof(RunOutboundQueueListener)} processed message: {myQueueItem}");
 
-            //var clientInbound = new ServiceBusClient(sbInboundConnectionString);
-            //var senderInbound = clientInbound.CreateSender(sbInboundQueueName);
+        //    //var clientInbound = new ServiceBusClient(sbInboundConnectionString);
+        //    //var senderInbound = clientInbound.CreateSender(sbInboundQueueName);
 
-            try
-            {
-                var jobject = (JObject)JsonConvert.DeserializeObject(myQueueItem);
-                var jvalue = (JValue)jobject["PrimaryEntityId"];
-                log?.LogInformation($"PrimaryEntityId: {jvalue}");
+        //    try
+        //    {
+        //        var jobject = (JObject)JsonConvert.DeserializeObject(myQueueItem);
+        //        var jvalue = (JValue)jobject["PrimaryEntityId"];
+        //        log?.LogInformation($"PrimaryEntityId: {jvalue}");
 
-                Guid applicationId = Guid.Parse(jvalue.ToString());
+        //        Guid applicationId = Guid.Parse(jvalue.ToString());
 
-                _logicService.OutboundListenerTest(applicationId, log);
-                //var dynamicsRepository = new DynamicsRepository();
+        //        _logicService.OutboundListenerTest(applicationId, log);
+        //        //var dynamicsRepository = new DynamicsRepository();
 
-                // write to Inbound queue
-                //Task.RunOutboundQueueListener(async () => await SendToQueueAsync(senderInbound, message, messageBody));
+        //        // write to Inbound queue
+        //        //Task.RunOutboundQueueListener(async () => await SendToQueueAsync(senderInbound, message, messageBody));
 
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                //Console.ReadKey();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        //Console.ReadKey();
 
-                //senderInbound.DisposeAsync();
-                //clientInbound.DisposeAsync();
-            }
-        }
+        //        //senderInbound.DisposeAsync();
+        //        //clientInbound.DisposeAsync();
+        //    }
+        //}
 
         //[FunctionName("InboundTopicListener")]
         //public void RunInboundTopicListener([ServiceBusTrigger("sgs-application-topic", "SGS-APPLICATION-CRM-SUBSCRIPTION", Connection = "InboundTopicConnectionString")] string myQueueItem,
